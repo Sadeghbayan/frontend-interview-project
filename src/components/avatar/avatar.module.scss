@@ -1,5 +1,9 @@
 .avatar {
   border-radius: 6px;
+
+  //Prevent contextual styling in root class
+  //based on the contribution guide
+  //it's better to create another wrapper inside the root element
   position: relative;
 
   &SmallIcon {

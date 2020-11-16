@@ -1,6 +1,11 @@
 @import '../../styles/import';
 
 .root {
+
+  //Prevent contextual styling in root class
+  //based on the contribution guide
+  //position, width
+  //it's better to create another wrapper inside the root element
   position: relative;
   width: 72px;
   height: 72px;
