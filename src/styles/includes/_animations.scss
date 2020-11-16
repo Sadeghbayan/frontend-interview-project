@@ -42,62 +42,58 @@
   100% { transform: rotate(360deg); }
 }
 
-@mixin slide-in-bottom() {
-  @-webkit-keyframes slide-in-bottom {
-    0% {
-      -webkit-transform: translateY(40px);
-      transform: translateY(40px);
-      opacity: 0;
-    }
-
-    100% {
-      -webkit-transform: translateY(0);
-      transform: translateY(0);
-      opacity: 1;
-    }
+@-webkit-keyframes slide-in-bottom {
+  0% {
+    -webkit-transform: translateY(40px);
+    transform: translateY(40px);
+    opacity: 0;
   }
 
-  @keyframes slide-in-bottom {
-    0% {
-      -webkit-transform: translateY(40px);
-      transform: translateY(40px);
-      opacity: 0;
-    }
-
-    100% {
-      -webkit-transform: translateY(0);
-      transform: translateY(0);
-      opacity: 1;
-    }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 1;
   }
 }
 
-@mixin slide-out-bottom() {
-  @-webkit-keyframes slide-out-bottom {
-    0% {
-      -webkit-transform: translateY(0);
-      transform: translateY(0);
-      opacity: 1;
-    }
-
-    100% {
-      -webkit-transform: translateY(40px);
-      transform: translateY(40px);
-      opacity: 0;
-    }
+@keyframes slide-in-bottom {
+  0% {
+    -webkit-transform: translateY(40px);
+    transform: translateY(40px);
+    opacity: 0;
   }
 
-  @keyframes slide-out-bottom {
-    0% {
-      -webkit-transform: translateY(0);
-      transform: translateY(0);
-      opacity: 1;
-    }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
 
-    100% {
-      -webkit-transform: translateY(40px);
-      transform: translateY(40px);
-      opacity: 0;
-    }
+@-webkit-keyframes slide-out-bottom {
+  0% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  100% {
+    -webkit-transform: translateY(40px);
+    transform: translateY(40px);
+    opacity: 0;
+  }
+}
+
+@keyframes slide-out-bottom {
+  0% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  100% {
+    -webkit-transform: translateY(40px);
+    transform: translateY(40px);
+    opacity: 0;
   }
 }
