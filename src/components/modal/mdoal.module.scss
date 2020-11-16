@@ -1,0 +1,112 @@
+@import '../../styles/import';
+
+.modal {
+  font-family: Arial, Helvetica, sans-serif;
+
+  &IsOpen {
+    $isOpen: & !global;
+  }
+
+  &IsClose {
+    $isClose: & !global;
+  }
+
+  &SlideDown {
+    $slideDown: & !global;
+  }
+}
+
+.fixedOverlay {
+  position: fixed;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  top: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 100;
+  display: none;
+  #{$isOpen} & {
+    display: block;
+  }
+  #{$isClose} & {
+    display: none;
+  }
+}
+
+.innerWrapper {
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 101;
+  display: none;
+  #{$isOpen} & {
+    display: flex;
+  }
+}
+
+.modalBox {
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: $dixa-separator-grey-faded;
+  position: relative;
+  border-radius: $dixa-border-radius;
+  margin: 0 auto;
+  -webkit-animation: slide-in-bottom 0.5s cubic-bezier(0.23, 1, 0.32, 1) backwards;
+  animation: slide-in-bottom 0.5s cubic-bezier(0.23, 1, 0.32, 1) backwards;
+  #{$slideDown} & {
+    -webkit-animation: slide-out-bottom 0.5s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+    animation: slide-out-bottom 0.5s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+  }
+}
+
+.header {
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  padding: 0 15px;
+
+  @include modalGeneral;
+}
+
+.title {
+  font-size: 18px;
+  color: $grey-1;
+  display: inline-block;
+}
+
+.closeBtn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 10;
+  padding: 0;
+  font-weight: 100;
+  font-size: 33px;
+  line-height: 1;
+  text-decoration: none;
+  background: 0 0;
+  border: 0;
+  outline: 0;
+  cursor: pointer;
+  width: 45px;
+  height: 45px;
+}
+
+.body {
+  padding: 0 15px;
+
+  @include modalGeneral;
+}
+
+.footer {
+  border-top-style: solid;
+  border-top-width: 1px;
+  padding: 10px 16px;
+  display: flex;
+  justify-content: flex-end;
+
+  @include modalGeneral;
+}
